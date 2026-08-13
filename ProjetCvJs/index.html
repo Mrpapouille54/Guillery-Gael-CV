@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Guillery Gael">
+  <meta name="description" content="CV de Gael Guillery – Étudiant en informatique à la HEH de Mons, passionné par le développement web et les systèmes embarqués.">
+  <meta name="keywords" content="CV, informatique, développement web, Python, HTML, CSS, JavaScript, Arduino, HEH Mons, Gael Guillery, Belgique">
+  <meta name="robots" content="index, follow">
+  <title>CV – Gael Guillery</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.0/css/glightbox.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.0/js/glightbox.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <style>
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    background: #d8dde5;
+    color: #1a202c;
+    font-size: 16px;
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  body.dark {
+    background: #090c10;
+    color: #c9d1d9;
+  }
+
+  .hero {
+    background: linear-gradient(140deg, #0d1117 0%, #13192b 45%, #0c1623 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 54px 40px;
+    color: #fff;
+  }
+
+  .hero-dots {
+    position: absolute;
+    inset: -60%;
+    width: 220%;
+    height: 220%;
+    background-image: radial-gradient(rgba(99, 210, 255, 0.18) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+    pointer-events: none;
+  }
+
+  .hero-glow-blue {
+    position: absolute;
+    top: -90px;
+    right: -70px;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.30) 0%, transparent 68%);
+    pointer-events: none;
+  }
+
+  .hero-glow-purple {
+    position: absolute;
+    bottom: -70px;
+    left: 80px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.24) 0%, transparent 68%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    z-index: 1;
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .photo-link {
+    display: block;
+    flex-shrink: 0;
+    border-radius: 50%;
+    line-height: 0;
+  }
+
+  .photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid rgba(99, 210, 255, 0.6);
+    object-fit: cover;
+    cursor: zoom-in;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 24px rgba(56, 189, 248, 0.3);
+  }
+
+  .photo:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 40px rgba(56, 189, 248, 0.52);
+  }
+
+  .hero h1 {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin-bottom: 6px;
+    color: #fff;
+  }
+
+  .hero h2 {
+    font-size: 15px;
+    color: #63d2ff;
+    font-weight: 400;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 17px;
+    border: 1px solid rgba(99, 210, 255, 0.33);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    backdrop-filter: blur(4px);
+  }
+
+  .btn:hover {
+    background: rgba(99, 210, 255, 0.14);
+    border-color: rgba(99, 210, 255, 0.6);
+    transform: translateY(-1px);
+  }
+
+  .cv-body {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 6px 32px rgba(0, 0, 0, 0.14);
+    transition: background 0.3s;
+  }
+
+  body.dark .cv-body {
+    background: #161b22;
+  }
+
+  .layout {
+    display: flex;
+  }
+
+  #heh_link {
+    color: #63d2ff;
+  }
+
+  aside {
+    flex: 0 0 255px;
+    background: #f3f6fa;
+    padding: 28px 22px;
+    border-right: 1px solid #dde3ec;
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  body.dark aside {
+    background: #0d1117;
+    border-color: #21262d;
+  }
+
+  .main-content {
+    flex: 1;
+    padding: 28px 32px;
+  }
+
+  section {
+    margin-bottom: 24px;
+  }
+
+  section h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 7px;
+    margin-bottom: 14px;
+  }
+
+  body.dark section h3 {
+    color: #63d2ff;
+    border-color: #63d2ff;
+  }
+
+  address p {
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 14px;
+    margin: 9px 0;
+    color: #445;
+  }
+
+  body.dark address p { color: #8b949e; }
+
+  address p i {
+    width: 16px;
+    text-align: center;
+    color: #2563eb;
+    font-size: 15px;
+  }
+
+  body.dark address p i { color: #63d2ff; }
+
+  .competence {
+    margin-bottom: 14px;
+  }
+
+  .skill-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 3px;
+    color: #1a202c;
+  }
+
+  body.dark .skill-label { color: #c9d1d9; }
+
+  .skill-label i {
+    color: #2563eb;
+    width: 16px;
+    text-align: center;
+  }
+
+  body.dark .skill-label i { color: #63d2ff; }
+
+  .skill-detail {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 6px 24px;
+  }
+
+  body.dark .skill-detail { color: #8b949e; }
+
+  .skill-bar {
+    height: 5px;
+    background: #dde3ec;
+    border-radius: 3px;
+    margin-left: 24px;
+    overflow: hidden;
+  }
+
+  body.dark .skill-bar { background: #2d333b; }
+
+  .skill-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #2563eb, #38bdf8);
+    border-radius: 3px;
+    transition: width 1.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul li {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 14px;
+    padding: 4px 0;
+    color: #445;
+  }
+
+  body.dark ul li { color: #8b949e; }
+
+  ul li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #2563eb;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  body.dark ul li::before { background: #63d2ff; }
+
+  .exp-item {
+    padding-left: 16px;
+    border-left: 2px solid #dde3ec;
+    margin-bottom: 18px;
+    transition: border-color 0.3s;
+  }
+
+  body.dark .exp-item { border-color: #21262d; }
+
+  .exp-item h4 {
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+    color: #1a202c;
+  }
+
+  body.dark .exp-item h4 { color: #c9d1d9; }
+
+  .exp-item h4 i {
+    color: #2563eb;
+    font-size: 13px;
+    width: 16px;
+    text-align: center;
+  }
+
+  body.dark .exp-item h4 i { color: #63d2ff; }
+
+  .exp-date {
+    font-size: 12px;
+    color: #888;
+    margin: 0 0 5px 24px;
+    font-style: italic;
+  }
+
+  body.dark .exp-date { color: #6e7681; }
+
+  .exp-item p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  body.dark .exp-item p { color: #8b949e; }
+
+  #profileText {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #445;
+  }
+
+  body.dark #profileText { color: #8b949e; }
+
+  @media (max-width: 768px) {
+
+    .hero { padding: 36px 22px; }
+
+    .layout { flex-direction: column; }
+
+    aside {
+      flex: none;
+      border-right: none;
+      border-bottom: 1px solid #dde3ec;
+    }
+
+    body.dark aside { border-color: #21262d; }
+
+    .main-content { padding: 26px 22px; }
+  }
+
+  @media (max-width: 480px) {
+
+    .hero { padding: 30px 16px; }
+
+    .hero-inner { flex-direction: column; gap: 22px; }
+
+    .profile { flex-direction: column; text-align: center; }
+
+    .photo { width: 90px; height: 90px; }
+
+    .hero h1 { font-size: 24px; }
+
+    .hero h2 { font-size: 14px; }
+
+    .buttons { justify-content: center; }
+  }
+
+  @media print {
+
+    @page { size: A4; margin: 10mm; }
+
+    body { background: white; }
+
+    .hero {
+      background: #0d1117 !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      padding: 22px 20px;
+    }
+
+    .hero-dots,
+    .hero-glow-blue,
+    .hero-glow-purple { display: none; }
+
+    .buttons { display: none; }
+
+    .cv-body { box-shadow: none; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+    }
+
+    aside { padding: 18px 14px; }
+
+    .main-content { padding: 18px 20px; }
+
+    section { margin-bottom: 14px; }
+
+    .skill-bar { display: none; }
+
+    section h3 { font-size: 9px; letter-spacing: 1.2px; }
+
+    .exp-item h4, section h3 span { font-size: 12px; }
+
+    p, li, address p, .exp-item p, .skill-detail, #profileText, .exp-date {
+      font-size: 11px !important;
+      line-height: 1.4 !important;
+    }
+
+    section, .exp-item { break-inside: avoid; }
+
+    .photo { width: 80px; height: 80px; }
+
+    .hero h1 { font-size: 22px; }
+    .hero h2 { font-size: 13px; }
+  }
+
+  </style>
+</head>
+
+<body>
+
+<header class="hero">
+
+  <div class="hero-dots" aria-hidden="true"></div>
+  <div class="hero-glow-blue" aria-hidden="true"></div>
+  <div class="hero-glow-purple" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+
+    <div class="profile">
+      <a href="photo_cv.jpg"
+         class="photo-link glightbox"
+         data-type="image"
+         data-description="Gael Guillery – Étudiant en informatique, HEH Mons"
+         aria-label="Agrandir la photo de profil">
+        <img src="photo_cv.jpg"
+             class="photo"
+             id="photo"
+             alt="Photo de Gael Guillery, étudiant en informatique à la HEH de Mons">
+      </a>
+      <div>
+        <h1>Gael Guillery</h1>
+        <h2><span id="jobTitle">Étudiant en Informatique &middot; </span><a id="heh_link" target="_blank" rel="noopener" href="https://www.heh.be/">HEH Mons</a></h2>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="btn" id="modeBtn" aria-label="Basculer le mode nuit">
+        <i class="fa-solid fa-moon" id="modeIcon"></i>
+        <span id="modeLabel">Mode Nuit</span>
+      </button>
+      <button class="btn" id="langBtn" aria-label="Changer la langue">
+        <i class="fa-solid fa-globe"></i>
+        <span id="langLabel">English</span>
+      </button>
+      <button class="btn" id="printBtn" aria-label="Imprimer le CV">
+        <i class="fa-solid fa-print"></i>
+        <span id="printLabel">Imprimer</span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<div class="cv-body">
+  <div class="layout">
+
+    <aside>
+
+      <section>
+        <h3>
+          <i class="fa-solid fa-address-card"></i>
+          <span id="contactTitle">Contact</span>
+        </h3>
+        <address>
+          <p><i class="fa-solid fa-phone"></i>+32 468 42 08 02</p>
+          <p><i class="fa-solid fa-envelope"></i>GuilleryGael@gmail.com</p>
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+            <span id="locationText">Belgique</span>
+          </p>
+          <p>
+            <i class="fa-solid fa-car"></i>
+            <span id="licenseText">Permis B</span>
+          </p>
+        </address>
+      </section>
+
+      <section>
+        <h3>
+          <i class="fa-solid fa-laptop-code"></i>
+          <span id="skillsTitle">Compétences</span>
+        </h3>
+
+        <div class="competence">
+          <p class="skill-label">
+            <i class="fa-brands fa-html5"></i>
+            <span id="webTitle">Développement Web</span>
+          </p>
+          <p class="skill-detail" id="webSkills">HTML, CSS, PHP, JavaScript</p>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="100"></div>
+          </div>
+        </div>
+
+        <div class="competence">
+          <p class="skill-label">
+            <i class="fa-brands fa-python"></i>
+            <span id="progTitle">Programmation</span>
+          </p>
+          <p class="skill-detail" id="progSkills">Principalement Python et autres langages</p>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="70"></div>
+          </div>
+        </div>
+
+        <div class="competence">
+          <p class="skill-label">
+            <i class="fa-solid fa-microchip"></i>
+            <span id="elecTitle">Électronique</span>
+          </p>
+          <p class="skill-detail" id="elecSkills">Bases en électronique, notamment avec Arduino et Raspberry Pi</p>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="55"></div>
+          </div>
+        </div>
+
+        <div class="competence">
+          <p class="skill-label">
+            <i class="fa-solid fa-network-wired"></i>
+            <span id="netTitle">Réseaux</span>
+          </p>
+          <p class="skill-detail" id="netSkills">Solides bases en réseaux, avec expérience sur équipements Cisco et Fortigate</p>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="65"></div>
+          </div>
+        </div>
+
+      </section>
+
+      <section>
+        <h3>
+          <i class="fa-solid fa-star"></i>
+          <span id="qualitiesTitle">Qualités</span>
+        </h3>
+        <ul id="qualitiesList">
+          <li>Esprit logique et analytique</li>
+          <li>Capacité à travailler en équipe</li>
+          <li>Résistant au stress</li>
+          <li>Discipline et persévérance</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>
+          <i class="fa-solid fa-language"></i>
+          <span id="langTitle">Langues</span>
+        </h3>
+        <ul id="langList">
+          <li>Français &mdash; langue maternelle</li>
+          <li>Anglais &mdash; niveau scolaire</li>
+          <li>Néerlandais &mdash; niveau scolaire</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>
+          <i class="fa-solid fa-heart"></i>
+          <span id="interestTitle">Centres d'intérêt</span>
+        </h3>
+        <ul id="interestList">
+          <li>Badminton (5 ans)</li>
+          <li>Jeux de rôle (D&amp;D)</li>
+          <li>Énigmes</li>
+        </ul>
+      </section>
+
+    </aside>
+
+    <div class="main-content">
+
+      <section>
+        <h3>
+          <i class="fa-solid fa-user"></i>
+          <span id="profileTitle">Profil</span>
+        </h3>
+        <p id="profileText">
+          Étudiant en informatique de 19 ans à la HEH de Mons, curieux et rigoureux.
+          Je développe régulièrement des projets personnels et académiques allant de la
+          programmation aux systèmes embarqués. Persévérant et dynamique, je m'investis
+          pleinement dans chacun de mes projets.
+        </p>
+      </section>
+
+      <section>
+        <h3>
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span id="eduTitle">Éducation</span>
+        </h3>
+
+        <div class="exp-item">
+          <h4>
+            <i class="fa-solid fa-university"></i>
+            <span id="hehTitle">Bachelier en Informatique – HEH Mons</span>
+          </h4>
+          <p class="exp-date" id="hehDate">2024 – présent</p>
+          <p id="hehText">
+            Formation en informatique à la Haute École en Hainaut de Mons, couvrant le
+            développement web, la programmation, les réseaux et les systèmes embarqués.
+          </p>
+        </div>
+
+        <div class="exp-item">
+          <h4>
+            <i class="fa-solid fa-school"></i>
+            <span id="cessTitle">CESS – Athénée Royal de Thuin</span>
+          </h4>
+          <p class="exp-date" id="cessDate">2024</p>
+          <p id="cessText">
+            CESS général en option Sciences fortes. Formation d'une solide base scientifique
+            ainsi que d'un esprit d'analyse et d'observation.
+          </p>
+        </div>
+
+      </section>
+
+      <section>
+        <h3>
+          <i class="fa-solid fa-briefcase"></i>
+          <span id="expTitle">Expériences professionnelles</span>
+        </h3>
+
+        <div class="exp-item">
+          <h4>
+            <i class="fa-solid fa-parachute-box"></i>
+            <span id="paraTitle">Stage Para-Commando</span>
+          </h4>
+          <p class="exp-date" id="paraDate">2023</p>
+          <p id="paraText">
+            Participation à un stage para-commando au sein de l'armée. Formation intensive
+            comprenant discipline, résistance physique, esprit d'équipe et gestion du stress.
+            Obtention du diplôme de parachutiste.
+          </p>
+        </div>
+
+        <div class="exp-item">
+          <h4>
+            <i class="fa-solid fa-hotel"></i>
+            <span id="hotelTitle">Serveur en hôtel</span>
+          </h4>
+          <p class="exp-date" id="hotelDate">2025 – présent</p>
+          <p id="hotelText">
+            Travail polyvalent dans un hôtel incluant le service en salle. Développement
+            du sens du service et gestion des demandes clients.
+          </p>
+        </div>
+
+        <div class="exp-item">
+          <h4>
+            <i class="fa-solid fa-champagne-glasses"></i>
+            <span id="eventTitle">Serveur en événementiel</span>
+          </h4>
+          <p class="exp-date" id="eventDate">2022 – présent</p>
+          <p id="eventText">
+            Service lors d'événements comme le Salon du Vin de La Louvière, la Saint-Roch
+            de Thuin et la grande Ducasse aux Cerises de Biercée.
+          </p>
+        </div>
+
+      </section>
+
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+
+// lightbox
+var lightbox = GLightbox({
+  touchNavigation: true,
+  loop: false,
+  autoplayVideos: false,
+  openEffect: 'fade',
+  closeEffect: 'fade',
+  descPosition: 'bottom'
+});
+
+// barres
+var skillBars = document.querySelectorAll('.skill-fill');
+
+var barObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      var bar = entry.target;
+      bar.style.width = bar.dataset.width + '%';
+      barObserver.unobserve(bar);
+    }
+  });
+}, { threshold: 0.4 });
+
+skillBars.forEach(function(bar) { barObserver.observe(bar); });
+
+// mode nuit
+var modeBtn   = document.getElementById('modeBtn');
+var modeIcon  = document.getElementById('modeIcon');
+var modeLabel = document.getElementById('modeLabel');
+var darkMode  = false;
+
+modeBtn.addEventListener('click', function() {
+  darkMode = !darkMode;
+  document.body.classList.toggle('dark', darkMode);
+  if (darkMode) {
+    modeIcon.className    = 'fa-solid fa-sun';
+    modeLabel.textContent = english ? 'Light Mode' : 'Mode Jour';
+  } else {
+    modeIcon.className    = 'fa-solid fa-moon';
+    modeLabel.textContent = english ? 'Night Mode' : 'Mode Nuit';
+  }
+});
+
+// print
+document.getElementById('printBtn').addEventListener('click', function() {
+  window.print();
+});
+
+// trad
+var english   = false;
+var langLabel = document.getElementById('langLabel');
+var photo     = document.getElementById('photo');
+
+document.getElementById('langBtn').addEventListener('click', trad);
+
+function set(id, text) {
+  var el = document.getElementById(id);
+  if (el) el.textContent = text;
+}
+
+function trad() {
+  english = !english;
+
+  if (english) {
+
+    langLabel.textContent = 'Français';
+    set('jobTitle',       'Computer Science Student \u00b7 ');
+    set('contactTitle',   'Contact');
+    set('licenseText',    'Driving Licence B');
+    set('skillsTitle',    'Hard Skills');
+    set('webTitle',       'Web Development');
+    set('progTitle',      'Programming');
+    set('elecTitle',      'Electronics');
+    set('netTitle',       'Networks');
+    set('webSkills',      'HTML, CSS, PHP, JavaScript');
+    set('progSkills',     'Mainly Python and other languages');
+    set('elecSkills',     'Basics in electronics, especially with Arduino and Raspberry Pi');
+    set('netSkills',      'Solid networking foundations, with hands-on experience on Cisco and Fortigate equipment');
+    set('qualitiesTitle', 'Soft Skills');
+    set('langTitle',      'Languages');
+    set('interestTitle',  'Interests');
+    set('profileTitle',   'Profile');
+    set('profileText',    '19-year-old computer science student at HEH de Mons, curious and rigorous. I regularly develop personal and academic projects ranging from programming to embedded systems. Persevering and dynamic, I am fully committed to each of my projects.');
+    set('eduTitle',       'Education');
+    set('hehTitle',       'Bachelor in Computer Science \u2013 HEH Mons');
+    set('hehDate',        '2024 \u2013 present');
+    set('hehText',        'Computer science programme at the Haute \u00c9cole en Hainaut de Mons, covering web development, programming, networking and embedded systems.');
+    set('cessTitle',      'CESS \u2013 Ath\u00e9n\u00e9e Royal de Thuin');
+    set('cessDate',       '2024');
+    set('cessText',       'Secondary school certificate with a strong science option. Developed solid scientific foundations as well as analytical and observational skills.');
+    set('expTitle',       'Professional Experience');
+    set('paraTitle',      'Paracommando Training');
+    set('paraDate',       '2023');
+    set('paraText',       'Participated in a paracommando training course in the Belgian Army. Intensive programme covering discipline, physical endurance, teamwork and stress management. Obtained parachutist certificate.');
+    set('hotelTitle',     'Waiter \u2013 Hotel');
+    set('hotelDate',      '2025 \u2013 present');
+    set('hotelText',      'Versatile role in a hotel including table service. Developed strong customer service skills and the ability to handle client requests efficiently.');
+    set('eventTitle',     'Waiter \u2013 Events');
+    set('eventDate',      '2022 \u2013 present');
+    set('eventText',      'Served at various events including the Wine Fair of La Louvi\u00e8re, the Saint-Roch de Thuin and the Ducasse aux Cerises in Bierc\u00e9e.');
+    set('locationText',   'Belgium');
+    set('modeLabel',      darkMode ? 'Light Mode' : 'Night Mode');
+    set('printLabel',     'Print');
+    photo.alt = 'Photo of Gael Guillery, computer science student at HEH Mons';
+
+    var photoLink = document.querySelector('.photo-link');
+    if (photoLink) photoLink.dataset.description = 'Gael Guillery \u2013 Computer science student, HEH Mons';
+    lightbox.reload();
+
+    var ql = document.getElementById('qualitiesList').children;
+    ql[0].textContent = 'Logical and analytical mind';
+    ql[1].textContent = 'Ability to work as part of a team';
+    ql[2].textContent = 'Resilient under stress';
+    ql[3].textContent = 'Discipline and perseverance';
+
+    var ll = document.getElementById('langList').children;
+    ll[0].textContent = 'French \u2014 mother tongue';
+    ll[1].textContent = 'English \u2014 school level';
+    ll[2].textContent = 'Dutch \u2014 school level';
+
+    var il = document.getElementById('interestList').children;
+    il[0].textContent = 'Badminton (5 years)';
+    il[1].textContent = 'Role-playing games (D&D)';
+    il[2].textContent = 'Riddles / Puzzles';
+
+  } else {
+
+    langLabel.textContent = 'English';
+    set('jobTitle',       '\u00c9tudiant en Informatique \u00b7 ');
+    set('contactTitle',   'Contact');
+    set('licenseText',    'Permis B');
+    set('skillsTitle',    'Comp\u00e9tences');
+    set('webTitle',       'D\u00e9veloppement Web');
+    set('progTitle',      'Programmation');
+    set('elecTitle',      '\u00c9lectronique');
+    set('netTitle',       'R\u00e9seaux');
+    set('webSkills',      'HTML, CSS, PHP, JavaScript');
+    set('progSkills',     'Principalement Python et autres langages');
+    set('elecSkills',     'Bases en \u00e9lectronique, notamment avec Arduino et Raspberry Pi');
+    set('netSkills',      'Solides bases en r\u00e9seaux, avec exp\u00e9rience sur \u00e9quipements Cisco et Fortigate');
+    set('qualitiesTitle', 'Qualit\u00e9s');
+    set('langTitle',      'Langues');
+    set('interestTitle',  "Centres d'int\u00e9r\u00eat");
+    set('profileTitle',   'Profil');
+    set('profileText',    "\u00c9tudiant en informatique de 19 ans \u00e0 la HEH de Mons, curieux et rigoureux. Je d\u00e9veloppe r\u00e9guli\u00e8rement des projets personnels et acad\u00e9miques allant de la programmation aux syst\u00e8mes embarqu\u00e9s. Pers\u00e9v\u00e9rant et dynamique, je m'investis pleinement dans chacun de mes projets.");
+    set('eduTitle',       '\u00c9ducation');
+    set('hehTitle',       'Bachelier en Informatique \u2013 HEH Mons');
+    set('hehDate',        '2024 \u2013 pr\u00e9sent');
+    set('hehText',        'Formation en informatique \u00e0 la Haute \u00c9cole en Hainaut de Mons, couvrant le d\u00e9veloppement web, la programmation, les r\u00e9seaux et les syst\u00e8mes embarqu\u00e9s.');
+    set('cessTitle',      'CESS \u2013 Ath\u00e9n\u00e9e Royal de Thuin');
+    set('cessDate',       '2024');
+    set('cessText',       "CESS g\u00e9n\u00e9ral en option Sciences fortes. Formation d'une solide base scientifique ainsi que d'un esprit d'analyse et d'observation.");
+    set('expTitle',       'Exp\u00e9riences professionnelles');
+    set('paraTitle',      'Stage Para-Commando');
+    set('paraDate',       '2023');
+    set('paraText',       "Participation \u00e0 un stage para-commando au sein de l'arm\u00e9e. Formation intensive comprenant discipline, r\u00e9sistance physique, esprit d'\u00e9quipe et gestion du stress. Obtention du dipl\u00f4me de parachutiste.");
+    set('hotelTitle',     'Serveur en h\u00f4tel');
+    set('hotelDate',      '2025 \u2013 pr\u00e9sent');
+    set('hotelText',      'Travail polyvalent dans un h\u00f4tel incluant le service en salle. D\u00e9veloppement du sens du service et gestion des demandes clients.');
+    set('eventTitle',     'Serveur en \u00e9v\u00e9nementiel');
+    set('eventDate',      '2022 \u2013 pr\u00e9sent');
+    set('eventText',      "Service lors d'\u00e9v\u00e9nements comme le Salon du Vin de La Louvi\u00e8re, la Saint-Roch de Thuin et la grande Ducasse aux Cerises de Bierc\u00e9e.");
+    set('locationText',   'Belgique');
+    set('modeLabel',      darkMode ? 'Mode Jour' : 'Mode Nuit');
+    set('printLabel',     'Imprimer');
+    photo.alt = "Photo de Gael Guillery, \u00e9tudiant en informatique \u00e0 la HEH de Mons";
+
+    var photoLink = document.querySelector('.photo-link');
+    if (photoLink) photoLink.dataset.description = 'Gael Guillery \u2013 \u00c9tudiant en informatique, HEH Mons';
+    lightbox.reload();
+
+    var ql = document.getElementById('qualitiesList').children;
+    ql[0].textContent = 'Esprit logique et analytique';
+    ql[1].textContent = "Capacit\u00e9 \u00e0 travailler en \u00e9quipe";
+    ql[2].textContent = 'R\u00e9sistant au stress';
+    ql[3].textContent = 'Discipline et pers\u00e9v\u00e9rance';
+
+    var ll = document.getElementById('langList').children;
+    ll[0].textContent = 'Fran\u00e7ais \u2014 langue maternelle';
+    ll[1].textContent = 'Anglais \u2014 niveau scolaire';
+    ll[2].textContent = 'N\u00e9erlandais \u2014 niveau scolaire';
+
+    var il = document.getElementById('interestList').children;
+    il[0].textContent = 'Badminton (5 ans)';
+    il[1].textContent = 'Jeux de r\u00f4le (D&D)';
+    il[2].textContent = '\u00c9nigmes';
+  }
+}
+
+</script>
+
+</body>
+</html>

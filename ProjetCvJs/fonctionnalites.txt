@@ -1,0 +1,34 @@
+Fonctionnalités JavaScript Guillery Gael
+
+1. GLIGHTBOX – Lightbox photo (PLUGIN TROUVÉ EN LIGNE)
+   Source : https://biati-digital.github.io/glightbox/ (CDN cdnjs)
+   Description : GLightbox est initialisé sur le lien qui entoure la
+   photo de profil. Un clic ouvre la photo en plein écran avec une
+   animation fade. La fermeture s'effectue par clic en dehors de
+   l'image, par la touche Échap ou via la croix intégrée au plugin.
+   La navigation tactile est activée. La description affichée sous la
+   photo se met à jour dynamiquement lors du changement de langue FR/EN
+   via lightbox.reload().
+
+2. BARRES DE COMPÉTENCES ANIMÉES – IntersectionObserver (vanilla JS <3)
+   Description : Les barres de compétences s'animent de 0 % jusqu'à la
+   valeur cible (100 %, 70 %, 55 %, 65 %) lorsqu'elles entrent dans le
+   viewport pour la première fois. Cet effet est impossible à reproduire
+   en CSS pur car CSS ne peut pas détecter l'entrée dans le viewport.
+
+3. MODE NUIT / JOUR (vanilla JS <3)
+   Description : Un bouton bascule le thème entre clair et sombre en
+   ajoutant ou retirant la classe .dark sur le <body>. L'icône (lune /
+   soleil) et le libellé du bouton s'adaptent dynamiquement. Le mode
+   est également compatible avec la traduction FR/EN.
+
+4. TRADUCTION FR / EN (vanilla JS <3)
+   Description : Un bouton permet de basculer tout le contenu textuel
+   du CV entre le français et l'anglais en temps réel, sans rechargement
+   de page. Les listes (qualités, langues, intérêts) et les labels des
+   boutons sont également traduits.
+
+5. BOUTON D'IMPRESSION (vanilla JS <3)
+   Description : Déclenche window.print() pour imprimer le CV ou
+   l'exporter en PDF. Un CSS @media print optimise la mise en page :
+   fond sombre du hero conservé, boutons masqués, mise en page A4.
